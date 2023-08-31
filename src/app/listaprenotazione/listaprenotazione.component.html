@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Ora</th>
+        <th>Proprietario</th>
+        <th>Telefono</th>
+        <th>Tipo Animale</th>
+        <th>Azioni</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prenotazione of prenotazioni">
+        <td>{{ prenotazione.data }}</td>
+        <td>{{ prenotazione.ora }}</td>
+        <td>{{ prenotazione.nomeProprietario }} {{ prenotazione.cognomeProprietario }}</td>
+        <td>{{ prenotazione.telefonoProprietario }}</td>
+        <td>{{ prenotazione.tipoAnimale }}</td>
+        <td>
+          <a routerLink="/prenotazione/{{ prenotazione.id }}">Dettagli</a> |
+          <a (click)="cancellaPrenotazione(prenotazione.id)">Cancella</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
